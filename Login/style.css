@@ -1,0 +1,110 @@
+html {
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+}
+body {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.left_body_div {
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  float: left;
+  height: 50%;
+}
+.left_body_text {
+  font-size: 1.75rem;
+  inline-size: 30rem;
+  margin: 0 1rem 0 1rem;
+}
+.right_body_div {
+  float: left;
+  text-align: center;
+}
+.loginform {
+  text-align: center;
+  /*margin: 6rem 0 0 0;*/
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0px 5px 10px 2px rgba(196, 191, 191, 0.596);
+}
+hr {
+  background-color: #dfdce4;
+  border: none;
+  height: 1px;
+  margin: 1rem 0.9rem 0 0.9rem;
+}
+.creation_page_paragraph {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+.pagecreation {
+  font-weight: bold;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #397dd6;
+}
+input {
+  width: 330px;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  margin: 0.8rem 0.9rem 0 0.9rem;
+  padding: 14px 16px;
+  color: #1d2129;
+  border-style: solid;
+}
+.login_button {
+  width: 23rem;
+  font-family: inherit;
+  background-color: #1877f2;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 0.4rem;
+  padding: 0 1rem;
+  height: 3rem;
+  margin: 1rem 0.9rem 1rem 0.9rem;
+  border: none;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+img {
+  height: 16.62rem;
+  margin-bottom: -0.7rem;
+  margin-left: -1rem;
+}
+body {
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+.create_new_account {
+  height: 3rem;
+  border-radius: 0.3rem;
+  outline: none;
+  color: white;
+  background-color: #42b72a;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 1.1rem;
+  width: 13rem;
+  margin: 1.8rem 0 1.8rem 0;
+  border: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.page_creation {
+  color: black;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.create_new_account:hover {
+  background-color: #2e941a;
+}
