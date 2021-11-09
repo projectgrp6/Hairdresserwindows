@@ -8,7 +8,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+label {
+  color: red;
+}
 .left_body_div {
   font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
   float: left;

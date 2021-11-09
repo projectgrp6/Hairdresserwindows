@@ -20,19 +20,33 @@
     </div>
     <div class="right_body_div">
       <!-- its the div for the form-->
-      <form method="GET" class="loginform">
+      <label id="credRemark"></label>
+      <form action="#" method="POST" class="loginform">
         <div>
           <input
+            id="usr"
             type="UserName"
             name="Username"
             placeholder="Email or Phone Number"
           />
         </div>
         <div>
-          <input type="password" name="Pasword" placeholder="Password" />
+          <input
+            id="pass"
+            type="password"
+            name="Pasword"
+            placeholder="Password"
+          />
         </div>
         <div>
-          <button class="login_button" name="Log In">Log In</button>
+          <button
+            type="button"
+            class="login_button"
+            name="Log In"
+            onclick="validateUser()"
+          >
+            Log In
+          </button>
         </div>
         <div>
           <a href="#">Forgot Password?</a>
@@ -50,5 +64,6 @@
         Powercoders
       </p>
     </div>
+    <script src="./JavaScript/script.js"></script>
   </body>
 </html>
