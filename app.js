@@ -15,7 +15,7 @@ var SCOPES =
 
 var authorizeButton = document.getElementById("authorize_button");
 var signoutButton = document.getElementById("signout_button");
-
+var clid;
 /**
  *  On load, called to load the auth2 library and API client library.
  */
@@ -89,7 +89,14 @@ function handleSignoutClick(event) {
 function appendPre(message) {
   var pre = document.getElementById("content");
   var textContent = document.createTextNode(message + "hi \n");
-  pre.appendChild(textContent);
+  var eventinfo = document.createElement("l");
+
+  message == "Upcoming events:"
+    ? eventinfo.setAttribute("class", "message")
+    : eventinfo.setAttribute("class", "appointments");
+  eventinfo.setAttribute("id", clid);
+  eventinfo.innerHTML = message;
+  pre.appendChild(eventinfo);
 }
 
 /**
@@ -114,7 +121,10 @@ function listUpcomingEvents() {
       if (events.length > 0) {
         for (i = 0; i < events.length; i++) {
           var event = events[i];
+          clid = event.id;
+          console.log(event.id);
           var when = event.start.dateTime;
+
           if (!when) {
             when = event.start.date;
           }
@@ -165,12 +175,16 @@ function createOnDate() {
   }
 }
 
-//===creat event===============================================
+//===create event===============================================
+let summaryText = document.querySelector("#apoint");
+let descriptionText = document.querySelector("#descrip");
+let attendee = document.getElementById("attendee");
+
 function createEvent() {
   let event = {
-    summary: "Created by Zia newone",
-    location: "800 Howard St., San Francisco, CA 94103",
-    description: "A chance to hear more about Google's developer products.",
+    summary: `${summaryText.value}`,
+    location: "Switzerland",
+    description: `${descriptionText.value}`,
     start: {
       dateTime: appstart,
       timeZone: "Europe/Zurich",
@@ -180,7 +194,7 @@ function createEvent() {
       timeZone: "Europe/Zurich",
     },
     recurrence: ["RRULE:FREQ=DAILY;COUNT=1"],
-    attendees: [{ email: "lpage@example.com" }, { email: "sbrin@example.com" }],
+    attendees: [{ email: attendee.value }],
     reminders: {
       useDefault: false,
       overrides: [
@@ -202,3 +216,19 @@ function createEvent() {
   });
 }
 create.addEventListener("click", createOnDate);
+function execute() {
+  return gapi.client.calendar.events
+    .delete({
+      calendarId: "primary",
+      eventId: "070dqpb2ecp1hrh3cmaftuu00o_20211112T080000Z",
+    })
+    .then(
+      function (response) {
+        // Handle the results here (response.result has the parsed body).
+        console.log("Response", response);
+      },
+      function (err) {
+        console.error("Execute error", err);
+      }
+    );
+}
