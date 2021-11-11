@@ -1,0 +1,39 @@
+body {
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* div {
+  border: solid 2px rgba(25, 25, 29, 0.288);
+}*/
+.appointments {
+  border: solid yellow 1px;
+  background-color: rgb(64, 209, 124);
+}
+/*  
+#inputDiv {
+  display: flex;
+  flex-direction: row;
+}
+#inputDiv label {
+  flex: 0 1 200px;
+} */
+body {
+  display: flex;
+  justify-content: space-between;
+}
+body div {
+  border: 1px solid black;
+  padding: 20px;
+  width: 50%;
+}
+body div form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+label {
+  display: inline-block;
+}
